@@ -19,7 +19,7 @@
                         <width>16</width>
                         <height>100%</height>
                         <aspectratio aligny="center">keep</aspectratio>
-                        <texture colordiffuse="GradientHighlight">common/cube-16.png</texture>
+                        <texture colordiffuse="Highlight">common/cube-16.png</texture>
                     </control>
                     <control type="label">
                         <left>2</left>
