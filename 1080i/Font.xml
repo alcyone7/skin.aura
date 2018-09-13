@@ -193,16 +193,14 @@
         </font>
         <font>
             <name>font_topbar</name>
-            <filename>RobotoCondensed-Bold.ttf</filename>
-            <size>36</size>
-            <aspect>0.9</aspect>
+            <filename>RobotoCondensed-light.ttf</filename>
+            <size>32</size>
             <style>bold</style>
         </font>
         <font>
             <name>font_topbar_small</name>
-            <filename>RobotoCondensed-Bold.ttf</filename>
-            <size>36</size>
-            <aspect>0.9</aspect>
+            <filename>RobotoCondensed-light.ttf</filename>
+            <size>32</size>
             <style>bold</style>
         </font>
         <font>
