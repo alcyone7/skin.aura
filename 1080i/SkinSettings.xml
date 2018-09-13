@@ -388,9 +388,6 @@
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                             <onclick>RunScript(script.skin.helper.colorpicker,skinstring=spotcolor.name)</onclick>
                         </control>
-
-
-
                         <control type="button" id="9403" description="Set overlaycolor ">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                             <include>Defs_Settings_Button</include>
@@ -449,6 +446,7 @@
                             <onclick>Skin.Reset(CycleColors)</onclick>
                             <onclick>Skin.Reset(MatchColors)</onclick>
                             <onclick>Skin.Reset(MatchOverlayColors)</onclick>
+							<onclick>Skin.Reset(spotcolor.name)</onclick>
                         </control>
                         
                         <!-- ======= -->
