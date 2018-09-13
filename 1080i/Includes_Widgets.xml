@@ -148,7 +148,7 @@
                     <width>16</width>
                     <height>100%</height>
                     <aspectratio aligny="center">keep</aspectratio>
-                    <texture colordiffuse="$VAR[ColorHighlight]">common/cube-16.png</texture>
+                    <texture colordiffuse="$VAR[ColorHighlight3]">common/cube-16.png</texture>
                 </control>
                 <control type="label">
                     <left>2</left>
@@ -500,7 +500,7 @@
                     <width>16</width>
                     <height>100%</height>
                     <aspectratio aligny="center">keep</aspectratio>
-                    <texture colordiffuse="$VAR[ColorHighlight]">common/cube-16.png</texture>
+                    <texture colordiffuse="$VAR[ColorHighlight3]">common/cube-16.png</texture>
                 </control>
                 <control type="label">
                     <left>2</left>

@@ -379,6 +379,18 @@
                             <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                             <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick>
                         </control>
+                        <control type="button" id="9407" description="Color Highlight">
+                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <enable>!Skin.HasSetting(CycleColors)</enable>
+                            <label>$LOCALIZE[31550]</label>
+                            <label2>$INFO[Skin.String(spotcolor.name)]</label2>
+                            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+                            <onclick>RunScript(script.skin.helper.colorpicker,skinstring=spotcolor.name)</onclick>
+                        </control>
+
+
+
                         <control type="button" id="9403" description="Set overlaycolor ">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                             <include>Defs_Settings_Button</include>

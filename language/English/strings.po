@@ -117,7 +117,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31021"
-msgid "Colors"
+msgid "Colours"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -292,7 +292,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31056"
-msgid "Genre colors in PVR guide"
+msgid "Genre colours in PVR guide"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -749,7 +749,7 @@ msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31156"
-msgid "Apply a color changing overlay effect to music visualisation background."
+msgid "Apply a colour changing overlay effect to music visualisation background."
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -919,7 +919,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31193"
-msgid "Reset colors to default"
+msgid "Reset colours to default"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1182,6 +1182,14 @@ msgctxt "#31250"
 msgid "Gradient colour"
 msgstr ""
 
+msgctxt "#31286"
+msgid "Highlight colour"
+msgstr ""
+
+msgctxt "#31550"
+msgid "Spot Highlight colour"
+msgstr ""
+
 msgctxt "#31251"
 msgid "Weather Fanart"
 msgstr ""
@@ -1279,7 +1287,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31273"
-msgid "Background overlay color"
+msgid "Background overlay colour"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1338,17 +1346,13 @@ msgctxt "#31285"
 msgid "Extended info"
 msgstr ""
 
-msgctxt "#31286"
-msgid "Highlight colour"
-msgstr ""
-
 msgctxt "#31287"
 msgid "Reset to default"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31288"
-msgid "Match highlight colors with poster"
+msgid "Match highlight colours with poster"
 msgstr ""
 
 msgctxt "#31289"
@@ -1431,7 +1435,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31305"
-msgid "Color cycling"
+msgid "Colour cycling"
 msgstr ""
 
 #: /1080i/Includes_Items.xml
@@ -1551,12 +1555,12 @@ msgstr ""
 
 #: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
 msgctxt "#31329"
-msgid "Colorbox Advanced Settings"
+msgid "Colourbox Advanced Settings"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31330"
-msgid "Advanced settings for colorbox (blur settings)"
+msgid "Advanced settings for colourbox (blur settings)"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1581,7 +1585,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31335"
-msgid "Match background overlay color with poster"
+msgid "Match background overlay colour with poster"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

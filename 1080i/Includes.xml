@@ -41,6 +41,12 @@
         <value condition="!String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
         <value>GradientHighlight</value>
     </variable>
+	
+	<variable name="ColorHighlight3">
+        <value condition="[Skin.HasSetting(CycleColors) | Skin.HasSetting(MatchColors)] + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN)) + !String.IsEqual(Window(home).Property(ImageCColorSEVEN),ffffffff) + !String.IsEqual(Window(home).Property(ImageCColorSEVEN),ff000000)">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+        <value condition="!String.IsEmpty(Skin.String(spotcolor.name))">$INFO[Skin.String(spotcolor.name)]</value>
+        <value>SpotHighlight</value>
+    </variable>
 
     <variable name="ColorOverlay">
         <value condition="Skin.HasSetting(DisableOverlayColor)">FFffffff</value>
