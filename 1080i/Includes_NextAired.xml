@@ -11,7 +11,7 @@
                     <left>view_pad</left>
                     <height>40</height>
                     <top>0</top>
-                    
+
                     <orientation>horizontal</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>16</itemgap>
@@ -62,7 +62,7 @@
                     </control>
                 </itemlayout>
                 <focusedlayout width="606.66" height="480">
-                    
+
                     <control type="group">
                         <include>Animation_FocusBounce_Small</include>
                         <left>view_pad</left>
@@ -79,7 +79,7 @@
                     </control>
                 </focusedlayout>
             </control>
-            
+
         </definition>
     </include>
 

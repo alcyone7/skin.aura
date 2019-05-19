@@ -128,11 +128,17 @@
                                 <width>700</width>
                                 <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
                                 <visible>!Window.IsVisible(musicosd) + !Window.IsVisible(videoosd)</visible>
-                                <include content="Object_Flags">
+                                <include content="Object_Flags" condition="!Skin.HasSetting(MonochromeFlags)">
                                     <param name="align" value="left" />
                                     <param name="source" value="VideoPlayer." />
                                     <param name="fps" value="true" />
                                     <param name="directory" value="color" />
+                                </include>
+                                <include content="Object_Flags" condition="Skin.HasSetting(MonochromeFlags)">
+                                    <param name="align" value="left" />
+                                    <param name="source" value="VideoPlayer." />
+                                    <param name="fps" value="true" />
+                                    <param name="directory" value="monochrome" />
                                 </include>
                             </control>
                         </control>
@@ -204,7 +210,7 @@
         <control type="group">
             <visible>!VideoPlayer.Content(musicvideos)</visible>
             <visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
-            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | !String.IsEmpty(Player.SeekNumeric)</visible>
             <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
             <animation effect="fade" start="0" end="100" time="300" condition="![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(musicosd) | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml)]">WindowOpen</animation>
             <control type="image">
@@ -304,8 +310,14 @@
                                     <left>256</left>
                                     <visible>!Pvr.IsPlayingTv</visible>
                                     <animation effect="slide" end="-256" condition="Skin.HasSetting(DisableStarRating)">Conditional</animation>
-                                    <include content="Object_OSD_Ratings">
+                                    <include content="Object_OSD_Ratings" condition="!Skin.HasSetting(MonochromeFlags)">
                                         <param name="directory" value="color" />
+                                        <param name="align" value="left" />
+                                        <param name="width" value="1200" />
+                                        <param name="imdbvotes" value="false" />
+                                    </include>
+                                    <include content="Object_OSD_Ratings" condition="Skin.HasSetting(MonochromeFlags)">
+                                        <param name="directory" value="monochrome" />
                                         <param name="align" value="left" />
                                         <param name="width" value="1200" />
                                         <param name="imdbvotes" value="false" />
@@ -325,10 +337,16 @@
                                     <top>-12</top>
                                     <right>-30</right>
                                     <visible>!Skin.HasSetting(HideOSDVideoCodec)</visible>
-                                    <include content="Object_Flags">
+                                    <include content="Object_Flags" condition="!Skin.HasSetting(MonochromeFlags)">
                                         <param name="source" value="VideoPlayer." />
                                         <param name="fps" value="true" />
                                         <param name="directory" value="color" />
+                                        <param name="align" value="right" />
+                                    </include>
+                                    <include content="Object_Flags" condition="Skin.HasSetting(MonochromeFlags)">
+                                        <param name="source" value="VideoPlayer." />
+                                        <param name="fps" value="true" />
+                                        <param name="directory" value="monochrome" />
                                         <param name="align" value="right" />
                                     </include>
                                 </control>
@@ -373,13 +391,13 @@
             <font/>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/record.png</texturefocus>
             <texturenofocus colordiffuse="main_fg_70">osd/record.png</texturenofocus>
-            <usealttexture>Player.Recording</usealttexture>
+            <usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
             <alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/record-on.png</alttexturefocus>
             <alttexturenofocus colordiffuse="main_fg_70">osd/record-on.png</alttexturenofocus>
-            <onclick>PlayerControl(Record)</onclick>
-            <enable>Player.CanRecord</enable>
+            <onclick>PVR.ToggleRecordPlayingChannel</onclick>
+            <enable>PVR.CanRecordPlayingChannel</enable>
             <visible>VideoPlayer.Content(LiveTV)</visible>
-            <animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
+            <animation effect="fade" start="100" end="33" time="100" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
             <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused">Play</onfocus>
             <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
             <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
@@ -489,9 +507,10 @@
             <font/>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/subs.png</texturefocus>
             <texturenofocus colordiffuse="main_fg_70">osd/subs.png</texturenofocus>
-            <onclick condition="VideoPlayer.HasSubtitles">NextSubtitle</onclick>
-            <onclick condition="!VideoPlayer.HasSubtitles">Close</onclick>
-            <onclick condition="!VideoPlayer.HasSubtitles">ActivateWindow(SubtitleSearch)</onclick>   
+            <onclick condition="Skin.HasSetting(OSDSubtitleSettings)">ActivateWindow(osdsubtitlesettings)</onclick>
+            <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + VideoPlayer.HasSubtitles">NextSubtitle</onclick>
+            <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">Close</onclick>
+            <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">ActivateWindow(SubtitleSearch)</onclick>
             <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused">Play</onfocus>
             <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
             <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>

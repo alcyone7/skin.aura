@@ -48,7 +48,6 @@
     <!-- Highlight -->
     <color name="Highlight">ff0385b5</color>
     <color name="Highlight2">ffe5b535</color>
-    <color name="Highlight3">4dcccccc</color>
     <color name="GradientHighlight">ff35e55e</color>
     <color name="Overlay">ff287ba8</color>
     <color name="Selected">ffededed</color>
